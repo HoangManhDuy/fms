@@ -2,6 +2,7 @@
 *.class
 target
 .settings
+.springBeans
 
 # Log file
 *.log
