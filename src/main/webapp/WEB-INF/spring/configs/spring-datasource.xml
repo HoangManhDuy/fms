@@ -47,6 +47,11 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/project/fms/model/hbm/Account.hbm.xml</value>
+				<value>com/project/fms/model/hbm/Room.hbm.xml</value>
+				<value>com/project/fms/model/hbm/Profile.hbm.xml</value>
+				<value>com/project/fms/model/hbm/Subject.hbm.xml</value>
+				<value>com/project/fms/model/hbm/Requested.hbm.xml</value>
+				<value>com/project/fms/model/hbm/RoomDetail.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

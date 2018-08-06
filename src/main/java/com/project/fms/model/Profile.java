@@ -14,13 +14,14 @@ public class Profile {
 	private Long academic_year;
 	private String mssv;
 	private String phone;
+	private Account account;
 
 	public Profile() {
 
 	}
 
 	public Profile(String name, String family_register, String specialized, Date date_of_birth, int gender,
-			String avatar, String type_of_training, Long academic_year, String mssv, String phone) {
+			String avatar, String type_of_training, Long academic_year, String mssv, String phone, Account account) {
 		this.name = name;
 		this.family_register = family_register;
 		this.specialized = specialized;
@@ -31,10 +32,15 @@ public class Profile {
 		this.academic_year = academic_year;
 		this.mssv = mssv;
 		this.phone = phone;
+		this.account = account;
 	}
 
 	public Long getId() {
 		return id;
+	}
+
+	private void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -117,12 +123,20 @@ public class Profile {
 		this.phone = phone;
 	}
 
+	public Account getAccount() {
+		return account;
+	}
+
+	public void setAccount(Account account) {
+		this.account = account;
+	}
+
 	@Override
 	public String toString() {
 		return "Profile [name=" + name + ", family_register=" + family_register + ", specialized=" + specialized
 				+ ", date_of_birth=" + date_of_birth + ", gender=" + gender + ", avatar=" + avatar
 				+ ", type_of_training=" + type_of_training + ", academic_year=" + academic_year + ", mssv=" + mssv
-				+ ", phone=" + phone + "]";
+				+ ", phone=" + phone + ", account=" + account + "]";
 	}
 
 }
