@@ -2,34 +2,41 @@ package com.project.fms.model;
 
 import java.util.Date;
 
-public class ClassDetails {
+public class RoomDetail {
 	private Long id;
-	private Class classes;
+	private Room room;
 	private Subject subject;
 	private Date date;
 	private String time_start;
+	private String time_end;
 
-	public ClassDetails() {
+	public RoomDetail() {
 
 	}
 
-	public ClassDetails(Class classes, Subject subject, Date date, String time_start) {
-		this.classes = classes;
+	public RoomDetail(Room room, Subject subject, Date date, String time_start, String time_end) {
+		super();
+		this.room = room;
 		this.subject = subject;
 		this.date = date;
 		this.time_start = time_start;
+		this.time_end = time_end;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public Class getClasses() {
-		return classes;
+	private void setId(Long id) {
+		this.id = id;
 	}
 
-	public void setClasses(Class classes) {
-		this.classes = classes;
+	public Room getRoom() {
+		return room;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
 	public Subject getSubject() {
@@ -56,10 +63,18 @@ public class ClassDetails {
 		this.time_start = time_start;
 	}
 
+	public String getTime_end() {
+		return time_end;
+	}
+
+	public void setTime_end(String time_end) {
+		this.time_end = time_end;
+	}
+
 	@Override
 	public String toString() {
-		return "ClassDetails [classes=" + classes + ", subject=" + subject + ", date=" + date + ", time_start="
-				+ time_start + "]";
+		return "RoomDetail [room=" + room + ", subject=" + subject + ", date=" + date + ", time_start=" + time_start
+				+ ", time_end=" + time_end + "]";
 	}
 
 }

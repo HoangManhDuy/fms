@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.project.fms.model">
+	<class name="Room" table="rooms">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="string" column="name" />
+		<property name="codeClass" type="string" column="codeClass" />
+
+		<list name="accounts" inverse="true" table="roomstudents">
+			<key column="roomId" />
+			<index column="id" />
+			<many-to-many column="accountId" class="Account" />
+		</list>
+
+		<list name="roomdetails" inverse="true">
+			<key column="roomId" />
+			<index column="id" />
+			<one-to-many class="RoomDetail" />
+		</list>
+	</class>
+</hibernate-mapping>

@@ -1,10 +1,10 @@
 package com.project.fms.model;
 
 import java.util.Date;
+import java.util.List;
 
-public class Repuested {
+public class Requested {
 	private Long id;
-	private Account account;
 	private String name;
 	private String family_register;
 	private Date date_of_birth;
@@ -12,14 +12,14 @@ public class Repuested {
 	private String avatar;
 	private String type_of_training;
 	private String phone;
+	private List<Account> accounts;
 
-	public Repuested() {
+	public Requested() {
 
 	}
 
-	public Repuested(Account account, String name, String family_register, Date date_of_birth, int gender,
-			String avatar, String type_of_training, String phone) {
-		this.account = account;
+	public Requested(String name, String family_register, Date date_of_birth, int gender, String avatar,
+			String type_of_training, String phone, List<Account> accounts) {
 		this.name = name;
 		this.family_register = family_register;
 		this.date_of_birth = date_of_birth;
@@ -27,18 +27,15 @@ public class Repuested {
 		this.avatar = avatar;
 		this.type_of_training = type_of_training;
 		this.phone = phone;
+		this.accounts = accounts;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public Account getAccount() {
-		return account;
-	}
-
-	public void setAccount(Account account) {
-		this.account = account;
+	private void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -97,11 +94,19 @@ public class Repuested {
 		this.phone = phone;
 	}
 
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
+
 	@Override
 	public String toString() {
-		return "Repuested [account=" + account + ", name=" + name + ", family_register=" + family_register
-				+ ", date_of_birth=" + date_of_birth + ", gender=" + gender + ", avatar=" + avatar
-				+ ", type_of_training=" + type_of_training + ", phone=" + phone + "]";
+		return "Requested [name=" + name + ", family_register=" + family_register + ", date_of_birth=" + date_of_birth
+				+ ", gender=" + gender + ", avatar=" + avatar + ", type_of_training=" + type_of_training + ", phone="
+				+ phone + ", accounts=" + accounts + "]";
 	}
 
 }

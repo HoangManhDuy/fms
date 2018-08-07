@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.project.fms.model">
+	<class name="Profile" table="profiles">
+		<id name="id" column="id">
+			<generator class="increment" />
+		</id>
+
+		<property name="name" type="string" column="name" />
+		<property name="family_register" type="string"
+			column="family_register" />
+		<property name="specialized" type="string"
+			column="specialized" />
+		<property name="date_of_birth" type="date"
+			column="date_of_birth" />
+		<property name="gender" type="integer" column="gender" />
+		<property name="avatar" type="string" column="avatar" />
+		<property name="type_of_training" type="string"
+			column="type_of_training" />
+		<property name="academic_year" type="long"
+			column="academic_year" />
+		<property name="mssv" type="string" column="mssv" />
+		<property name="phone" type="string" column="phone" />
+
+		<one-to-one name="account" property-ref="profile" />
+	</class>
+</hibernate-mapping>
