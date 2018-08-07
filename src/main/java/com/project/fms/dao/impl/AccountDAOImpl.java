@@ -1,11 +1,15 @@
 package com.project.fms.dao.impl;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
+import javax.sql.DataSource;
 
 import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
@@ -23,6 +27,16 @@ public class AccountDAOImpl extends GenericDAO<Integer, Account> implements Acco
 
 	public AccountDAOImpl(SessionFactory sessionFactory) {
 		setSessionFactory(sessionFactory);
+	}
+
+	DataSource dataSource;
+
+	public DataSource getDataSource() {
+		return dataSource;
+	}
+
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
 	}
 
 	@Override
@@ -50,5 +64,18 @@ public class AccountDAOImpl extends GenericDAO<Integer, Account> implements Acco
 	public List<Account> loadAccounts() {
 		return getSession().createQuery("FROM Account").getResultList();
 	}
-	
+
+	@Override
+	public boolean isValidateAccount(String email, String password) throws SQLException {
+		String query = "select count(1) from accounts where email = ? and password = ?";
+		PreparedStatement pst = dataSource.getConnection().prepareStatement(query);
+		pst.setString(1, email);
+		pst.setString(2, password);
+		ResultSet resultSet = pst.executeQuery();
+		if (resultSet.next())
+			return (resultSet.getInt(1) > 0);
+		else
+			return false;
+	}
+
 }
