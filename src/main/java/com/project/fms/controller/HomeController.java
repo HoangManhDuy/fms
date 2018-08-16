@@ -18,7 +18,7 @@ public class HomeController {
 	@Autowired
 	SessionFactory sessionFactory;
 
-	@RequestMapping(value = "/home", method = RequestMethod.POST)
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView homePage() {
 		ModelAndView model = new ModelAndView();
 

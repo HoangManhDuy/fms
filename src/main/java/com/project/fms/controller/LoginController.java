@@ -20,6 +20,14 @@ public class LoginController {
 	@Autowired
 	private AccountService accountService;
 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView loginPage() {
+		ModelAndView model = new ModelAndView();
+
+		model.setViewName("login");
+		return model;
+	}
+
 	@RequestMapping(value = { "/" }, method = RequestMethod.POST)
 	public ModelAndView executeLogin(HttpServletRequest request, @RequestParam String email,
 			@RequestParam String password) {

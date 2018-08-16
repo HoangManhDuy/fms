@@ -11,6 +11,7 @@ import com.project.fms.service.AccountService;
 
 public class AccountServiceImpl extends BaseServiceImpl implements AccountService {
 	private static Logger logger = Logger.getLogger(AccountServiceImpl.class);
+
 	private AccountDAO accountDAO;
 
 	public AccountDAO getAccountDAO() {
