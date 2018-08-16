@@ -3,13 +3,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
-    <import resource="spring-dao.xml"/>
-    
-	<bean id="loginDelegate" class="com.project.fms.delegate.LoginDelegate">
-		<property name="accountService" ref="accountService"/>
-	</bean>
-	
-	<bean id="accountService" class="com.project.fms.service.impl.AccountServiceImpl">
-		<property name="accountDAO" ref="accountDAO"/>
+	<import resource="spring-dao.xml" />
+
+	<bean id="accountService" parent="baseTransactionProxy">
+		<property name="target">
+			<bean class="com.project.fms.service.impl.AccountServiceImpl">
+				<property name="accountDAO" ref="accountDAO" />
+			</bean>
+		</property>
 	</bean>
 </beans>

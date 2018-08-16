@@ -1,6 +1,5 @@
 package com.project.fms.service;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import com.project.fms.model.Account;
@@ -10,9 +9,7 @@ public interface AccountService extends BaseService<Integer, Account> {
 
 	Account findByEmail(String email);
 
-	boolean isValidateAccount(String email, String password) throws SQLException;
-
-	List<Account> searchAccounts(String name, int gender);
+	boolean checkAccount(String email, String password);
 
 	List<Account> loadAccounts();
 }
