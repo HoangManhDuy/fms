@@ -23,7 +23,7 @@ public abstract class GenericDAO<PK extends Serializable, T> extends HibernateDa
 
 	public boolean delete(T entity) {
 		getSession().delete(entity);
-		return false;
+		return true;
 	}
 
 	public T saveOrUpdate(T entity) {
