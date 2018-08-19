@@ -1,7 +1,6 @@
 package com.project.fms.service.impl;
 
 import java.io.Serializable;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -11,7 +10,7 @@ import com.project.fms.model.Account;
 import com.project.fms.service.AccountService;
 
 public class AccountServiceImpl extends BaseServiceImpl implements AccountService {
-	private static final Logger logger = Logger.getLogger(AccountServiceImpl.class);
+	private static Logger logger = Logger.getLogger(AccountServiceImpl.class);
 	private AccountDAO accountDAO;
 
 	public AccountDAO getAccountDAO() {
@@ -53,14 +52,17 @@ public class AccountServiceImpl extends BaseServiceImpl implements AccountServic
 	}
 
 	@Override
-	public boolean isValidateAccount(String email, String password) throws SQLException {
-		return accountDAO.isValidateAccount(email, password);
-	}
-
-	@Override
-	public List<Account> searchAccounts(String name, int gender) {
-		// TODO Auto-generated method stub
-		return null;
+	public boolean checkAccount(String email, String password) {
+		try {
+			Account account = accountDAO.findByEmail(email);
+			if (account == null || !password.equals(account.getPassword()))
+				return false;
+			else
+				return true;
+		} catch (Exception e) {
+			logger.error("account findByEmail - execute: ", e);
+			return false;
+		}
 	}
 
 	@Override

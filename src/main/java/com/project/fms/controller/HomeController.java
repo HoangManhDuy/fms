@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-
 /**
  * Handles requests for the application home page.
  */
@@ -18,16 +17,11 @@ public class HomeController {
 
 	@Autowired
 	SessionFactory sessionFactory;
-	
-//	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
 	@RequestMapping(value = "/home", method = RequestMethod.POST)
 	public ModelAndView homePage() {
 		ModelAndView model = new ModelAndView();
-		
+
 		model.setViewName("home");
 		return model;
 	}

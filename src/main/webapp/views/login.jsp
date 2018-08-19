@@ -43,8 +43,9 @@
 		<div class="container-login100"
 			style="background-image: url('<c:url value='/assets/images/bg-01.jpg' />');">
 			<div class="wrap-login100">
+				<h1>${message}</h1>
 				<form class="login100-form validate-form" method="post"
-					action="home" modelAttribute="accountBean">
+					action="/springmvc/">
 					<span class="login100-form-logo"> <i
 						class="zmdi zmdi-landscape"></i>
 					</span> <span class="login100-form-title p-b-34 p-t-27"> Log in </span>
@@ -58,7 +59,7 @@
 
 					<div class="wrap-input100 validate-input"
 						data-validate="Enter password">
-						<input class="input100" type="password" name="pass"
+						<input class="input100" type="password" name="password"
 							placeholder="Password"> <span class="focus-input100"
 							data-placeholder="&#xf191;"></span>
 					</div>
