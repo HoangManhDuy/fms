@@ -16,7 +16,7 @@
 	</definition>
 
 	<definition name="admin-home" extends="baseLayout">
-		<put-attribute name="title" value="HOME Page" />
+		<put-attribute name="title" value="ADMIN HOME" />
 		<put-attribute name="body"
 			value="/views/admin/admin_home.jsp" />
 	</definition>

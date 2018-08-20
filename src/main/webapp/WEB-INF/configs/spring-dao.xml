@@ -11,5 +11,19 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	
+	<bean id="roomDAO"
+		class="com.project.fms.dao.impl.RoomDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="subjectDAO"
+		class="com.project.fms.dao.impl.SubjectDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 
 </beans>
