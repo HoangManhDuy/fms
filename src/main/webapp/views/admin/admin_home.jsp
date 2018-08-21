@@ -1,7 +1,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<link href="<c:url value ="/assets/css/admin/css/admin-home-custom.css" />"
+<link
+	href="<c:url value ="/assets/css/admin/css/admin-home-custom.css" />"
 	rel='stylesheet' type='text/css' />
 
 <div class="main-page">
@@ -10,18 +11,20 @@
 			<div class="col_3">
 				<div class="col-md-3 widget widget1">
 					<div class="r3_counter_box">
-						<i class="pull-left fa fa-suitcase user2 icon-rounded"></i>
-						<div class="stats">
-							<h5>
-								<strong> <c:if test="${empty subject}">
+						<a href="adminSubject"> 
+							<i class="pull-left fa fa-suitcase user2 icon-rounded"></i>
+							<div class="stats">
+								<h5>
+									<strong> <c:if test="${empty subject}">
 										0
 									</c:if> <c:if test="${not empty subject}">
 										${subject.size()}
 									</c:if>
-								</strong>
-							</h5>
-							<span>Total Subjects</span>
-						</div>
+									</strong>
+								</h5>
+								<span>Total Subjects</span>
+							</div>
+						</a>
 					</div>
 				</div>
 				<div class="col-md-3 widget widget1">
