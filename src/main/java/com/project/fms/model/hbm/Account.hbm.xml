@@ -11,7 +11,7 @@
 		<property name="password" type="string" column="password" />
 		<property name="role" type="integer" column="role" />
 
-		<many-to-one name="profile" column="profile" unique="true"
+		<many-to-one name="profile" column="profile"
 			not-null="true">
 		</many-to-one>
 

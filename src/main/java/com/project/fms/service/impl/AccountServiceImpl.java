@@ -68,8 +68,8 @@ public class AccountServiceImpl extends BaseServiceImpl implements AccountServic
 
 	@Override
 	public List<Account> loadAccounts() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return accountDAO.loadAccounts();
 	}
 
 }
