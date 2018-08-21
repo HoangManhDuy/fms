@@ -18,8 +18,13 @@ public class SubjectServiceImpl implements SubjectService {
 	}
 
 	@Override
-	public List<Subject> loadSubjects() {
-		return subjectDAO.loadSubjects();
+	public List<Subject> loadSubjects(Integer offset, Integer maxResults) {
+		return subjectDAO.loadSubjects(offset, maxResults);
+	}
+
+	@Override
+	public Long count() {
+		return subjectDAO.count();
 	}
 
 }

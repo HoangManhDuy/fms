@@ -6,5 +6,6 @@ import com.project.fms.model.Subject;
 
 public interface SubjectDAO  {
 	
-	List<Subject> loadSubjects();
+	List<Subject> loadSubjects(Integer offset, Integer maxResults);
+	public Long count();
 }
