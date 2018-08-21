@@ -14,11 +14,19 @@
 		<put-attribute name="footer"
 			value="/views/admin/layout/footer.jsp" />
 	</definition>
-
+	
+	<!-- admin home page -->
 	<definition name="admin-home" extends="baseLayout">
 		<put-attribute name="title" value="ADMIN HOME" />
 		<put-attribute name="body"
 			value="/views/admin/admin_home.jsp" />
+	</definition>
+	
+	<!-- page show list subject -->
+	<definition name="admin-subject" extends="baseLayout">
+		<put-attribute name="title" value="SUBJECT MANAGER" />
+		<put-attribute name="body"
+			value="/views/admin/list_subject.jsp" />
 	</definition>
 
 </tiles-definitions>

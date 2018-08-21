@@ -41,5 +41,16 @@ public class AdminController {
 		
 		return model;
 	}
+	
+	@RequestMapping(value = "/adminSubject", method = RequestMethod.GET)
+	public ModelAndView listSubject() {
+		List<Subject> subjects = subjectService.loadSubjects();
+		
+		ModelAndView model = new ModelAndView();
+		model.addObject("subject", subjects);
+		model.setViewName("admin-subject");
+		
+		return model;
+	}
 
 }

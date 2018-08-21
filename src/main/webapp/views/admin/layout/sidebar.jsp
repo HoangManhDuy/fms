@@ -12,7 +12,7 @@
 						class="icon-bar"></span>
 				</button>
 				<h1>
-					<a class="navbar-brand" href="index.html"><span
+					<a class="navbar-brand" href="adminHome"><span
 						class="fa fa-area-chart"></span> HD-SIS<span
 						class="dashboard_text">Manager</span></a>
 				</h1>
@@ -21,7 +21,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
-					<li class="treeview"><a href="index.html"> <i
+					<li class="treeview"><a href="adminHome"> <i
 							class="fa fa-home"></i> <span>Home Page Manager</span>
 					</a></li>
 					<li class="treeview"><a href="#"> <i
@@ -29,7 +29,7 @@
 							class="fa fa-angle-left pull-right"></i>
 					</a></li>
 
-					<li class="treeview"><a href="#"> <i
+					<li class="treeview"><a href="adminSubject"> <i
 							class="fa fa-suitcase"></i> <span>Subjects</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a></li>
