@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:set var="context" value="${pageContext.request.contextPath}" />
+
 <div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left"
 	id="cbp-spmenu-s1">
 	<!--left-fixed -navigation-->
@@ -12,7 +18,7 @@
 						class="icon-bar"></span>
 				</button>
 				<h1>
-					<a class="navbar-brand" href="adminHome"><span
+					<a class="navbar-brand" href="${context}/adminHome"><span
 						class="fa fa-area-chart"></span> HD-SIS<span
 						class="dashboard_text">Manager</span></a>
 				</h1>
@@ -21,7 +27,7 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="sidebar-menu">
 					<li class="header">MAIN NAVIGATION</li>
-					<li class="treeview"><a href="adminHome"> <i
+					<li class="treeview"><a href="${context}/adminHome"> <i
 							class="fa fa-home"></i> <span>Home Page Manager</span>
 					</a></li>
 					<li class="treeview"><a href="#"> <i
@@ -29,7 +35,7 @@
 							class="fa fa-angle-left pull-right"></i>
 					</a></li>
 
-					<li class="treeview"><a href="adminSubject"> <i
+					<li class="treeview"><a href="${context}/adminSubject/0"> <i
 							class="fa fa-suitcase"></i> <span>Subjects</span> <i
 							class="fa fa-angle-left pull-right"></i>
 					</a></li>

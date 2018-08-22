@@ -27,4 +27,9 @@ public class SubjectServiceImpl implements SubjectService {
 		return subjectDAO.count();
 	}
 
+	@Override
+	public List<Subject> findByKeyword(String keyword) {
+		return subjectDAO.findByKeyword(keyword);
+	}
+
 }

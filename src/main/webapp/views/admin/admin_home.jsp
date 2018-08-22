@@ -5,13 +5,15 @@
 	href="<c:url value ="/assets/css/admin/css/admin-home-custom.css" />"
 	rel='stylesheet' type='text/css' />
 
+<c:set var="context" value="${pageContext.request.contextPath}" />
+
 <div class="main-page">
 	<div class="body-custom">
 		<div class="row">
 			<div class="col_3">
 				<div class="col-md-3 widget widget1">
 					<div class="r3_counter_box">
-						<a href="${adminSubject}"> 
+						<a href="${context}/adminSubject/0"> 
 							<i class="pull-left fa fa-suitcase user2 icon-rounded"></i>
 							<div class="stats">
 								<h5>

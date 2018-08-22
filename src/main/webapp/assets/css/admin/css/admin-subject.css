@@ -1,3 +1,17 @@
 .student-page {
-	margin-top: 65px;
+	margin-top: 10px;
 }
+
+.search-box-custom {
+	float: right ;
+    width: 35% ;
+}
+
+.search-box {
+	width: 70%;
+}
+
+.search-button {
+	padding-top: 10px;
+}
+

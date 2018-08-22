@@ -28,5 +28,12 @@
 		<put-attribute name="body"
 			value="/views/admin/list_subject.jsp" />
 	</definition>
+	
+	<!-- page show list search subject -->
+	<definition name="subject-search" extends="baseLayout">
+		<put-attribute name="title" value="SUBJECT MANAGER" />
+		<put-attribute name="body"
+			value="/views/admin/list_search_subject.jsp" />
+	</definition>
 
 </tiles-definitions>
