@@ -48,8 +48,7 @@ public class AccountServiceImpl extends BaseServiceImpl implements AccountServic
 
 	@Override
 	public Account findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		return accountDAO.findByEmail(email);
 	}
 
 	@Override

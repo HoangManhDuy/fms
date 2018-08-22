@@ -19,6 +19,7 @@ public class AccountDAOImpl extends GenericDAO<Integer, Account> implements Acco
 		setSessionFactory(sessionFactory);
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public Account findByEmail(String email) {
 		Criteria criteria = getSession().createCriteria(Account.class);

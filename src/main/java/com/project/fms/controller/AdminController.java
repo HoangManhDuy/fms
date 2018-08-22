@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,7 +16,6 @@ import com.project.fms.model.Subject;
 import com.project.fms.service.AccountService;
 import com.project.fms.service.RoomService;
 import com.project.fms.service.SubjectService;
-import com.project.fms.taglib.PaginationTaglib;
 
 @Controller
 public class AdminController {
@@ -25,13 +25,14 @@ public class AdminController {
 	private RoomService roomService;
 	@Autowired
 	private SubjectService subjectService;	
-
+	
+	@ModelAttribute("adminHome")
 	@RequestMapping(value = "/adminHome", method = RequestMethod.GET)
-	public ModelAndView adminHomePage(Integer offset, Integer maxResult) {
+	public ModelAndView adminHomePage() {
 
 		List<Account> students = accountService.loadAccounts();
 		List<Room> rooms = roomService.loadRooms();
-		List<Subject> subjects = subjectService.loadSubjects(offset, maxResult);
+		Long subjects = subjectService.count();
 	
 		ModelAndView model = new ModelAndView();
 		
@@ -44,6 +45,7 @@ public class AdminController {
 		return model;
 	}
 	
+	@ModelAttribute("adminSubject")
 	@RequestMapping(value = "/adminSubject/{offset}", method = RequestMethod.GET)
 	public ModelAndView listSubject(@PathVariable int offset, Integer maxResults) {
 		List<Subject> subjects = subjectService.loadSubjects(offset, maxResults);
