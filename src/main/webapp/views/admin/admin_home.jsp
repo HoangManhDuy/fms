@@ -11,14 +11,14 @@
 			<div class="col_3">
 				<div class="col-md-3 widget widget1">
 					<div class="r3_counter_box">
-						<a href="adminSubject"> 
+						<a href="${adminSubject}"> 
 							<i class="pull-left fa fa-suitcase user2 icon-rounded"></i>
 							<div class="stats">
 								<h5>
 									<strong> <c:if test="${empty subject}">
 										0
 									</c:if> <c:if test="${not empty subject}">
-										${subject.size()}
+										${subject}
 									</c:if>
 									</strong>
 								</h5>
