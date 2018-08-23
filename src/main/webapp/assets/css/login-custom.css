@@ -1,3 +1,11 @@
+/* alert */
+.alert-custom {
+	margin: 0px 420px 0px 420px;
+	text-align: center;
+	color: red;
+	font-size: 30px
+}
+
 /* Title Home */
 .title-head {
 	text-align: center;
@@ -8,7 +16,6 @@
     color: #fff;
     font-family: Poppins-Medium;
 }
-
 
 /* Form login */
 .form-login-custom {

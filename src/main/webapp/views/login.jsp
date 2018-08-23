@@ -44,14 +44,22 @@
 	<div class="limiter">
 		<div class="container-login100"
 			style="background-image: url('<c:url value='/assets/images/bg-01.jpg' />');">
+			<c:if test="${not empty message}">
+				<div class="alert alert-dismissible alert-custom" role="alert">
+					<button type="button" class="close" data-dismiss="alert"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<strong>${message}</strong>
+				</div>
+			</c:if>
 			<div class="wrap-login100 form-custom">
 				<div class="row title">
 					<h1 class="title-head">Student Information Management System</h1>
 					<span class="login100-form-logo"> <i
 						class="zmdi zmdi-landscape"></i>
-					</span> 
-					<span class="hs">|</span>
-					<span class="login100-form-title "> HD-SIS </span>
+					</span> <span class="hs">|</span> <span class="login100-form-title ">
+						HD-SIS </span>
 				</div>
 				<div class="row form-login-custom">
 					<form class="login100-form validate-form" method="post"
