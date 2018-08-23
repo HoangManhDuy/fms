@@ -2,6 +2,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<c:set var="context" value="${pageContext.request.contextPath}" />
+
 <div class="sticky-header header-section ">
 	<div class="header-left">
 		<!--toggle button start-->
@@ -164,7 +166,7 @@
 						</div>
 				</a>
 					<ul class="dropdown-menu drp-mnu">
-						<li><a href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+						<li><a href="${context}/logout"><i class="fa fa-sign-out"></i> Logout</a></li>
 					</ul></li>
 			</ul>
 		</div>
