@@ -7,5 +7,8 @@ import com.project.fms.model.Subject;
 public interface SubjectService {
 	
 	List<Subject> loadSubjects(Integer offset, Integer maxResults);
+	
 	public Long count();
+	
+	List<Subject> findByKeyword(String keyword);
 }
